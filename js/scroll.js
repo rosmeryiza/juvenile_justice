@@ -15,7 +15,7 @@ $(document).ready(function() {
                 offset: 50 // move trigger to center of element
             })
             .setClassToggle("#message" + stringNum, "visible") // add class to reveal
-            .addIndicators()
+            //.addIndicators()
             .addTo(controller);
         }
 
@@ -30,18 +30,49 @@ $(document).ready(function() {
             //.addIndicators()
             .addTo(controller);
 
-        // falling graphic
-        for (var i=1; i<4; i++) {
+        // falling graphics
+        //fall one
+        var scene = new ScrollMagic.Scene({
+            triggerElement: "#youth1",
+            triggerHook: "onLeave", 
+            duration: "90%"
+        })
+        .setPin("#youth1")
+        //.addIndicators() 
+        .addTo(controller);
+
+        //fall two
+        var scene = new ScrollMagic.Scene({
+            triggerElement: "#third-graf",
+            triggerHook: "onLeave", 
+            duration: "100%"
+        })
+        .setPin("#youth2")
+        //.addIndicators() 
+        .addTo(controller);
+
+        //fall three
+        var scene = new ScrollMagic.Scene({
+            triggerElement: "#youth3",
+            triggerHook: "onLeave", 
+            duration: "50%"
+        })
+        .setPin("#youth3")
+        //.addIndicators() 
+        .addTo(controller);
+
+        /*
+        for (var i=1; i<2; i++) {
             var stringNum = i.toString();
             var scene = new ScrollMagic.Scene({
                 triggerElement: "#fall" + stringNum,
                 triggerHook: "onLeave", 
-                duration: "60%"
+                duration: "90%"
             })
             .setPin("#fall" + stringNum)
-            //.addIndicators() 
+            .addIndicators() 
             .addTo(controller);
-        }
+        } */
 
         // hide graphic
         new ScrollMagic.Scene({
